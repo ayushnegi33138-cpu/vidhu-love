@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#12070e">
+<title>Vidhu ❤️ — Our Little Story</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#10070d;color:#fff;font-family:'DM Sans',sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background:
+radial-gradient(circle at 15% 15%,#ff4f87 0 1px,transparent 2px),
+radial-gradient(circle at 80% 25%,#fff 0 1px,transparent 2px),
+radial-gradient(circle at 40% 75%,#ff9fbe 0 1px,transparent 2px),
+radial-gradient(circle at 90% 85%,#fff 0 1px,transparent 2px);background-size:150px 150px,190px 190px,220px 220px,170px 170px}
+section{padding:80px 20px;max-width:900px;margin:auto}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px 20px;position:relative}
+.glow{position:absolute;width:320px;height:320px;border-radius:50%;background:#ff3e78;filter:blur(100px);opacity:.16}
+.card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:28px;backdrop-filter:blur(12px);box-shadow:0 18px 60px rgba(0,0,0,.25)}
+h1,h2{font-family:'Playfair Display',serif}
+h1{font-size:clamp(48px,15vw,88px);line-height:.95;margin:14px 0}
+h2{font-size:clamp(34px,9vw,54px);margin:10px 0 18px}
+.kicker{letter-spacing:3px;text-transform:uppercase;color:#ffabc5;font-size:12px;font-weight:700}
+.sub{color:#d9c5ce;line-height:1.7}
+.btn{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:14px 20px;border-radius:999px;background:#ff477f;color:#fff;text-decoration:none;font-weight:700;box-shadow:0 10px 30px rgba(255,71,127,.25)}
+.timeline{position:relative;margin-top:30px}
+.timeline:before{content:"";position:absolute;left:15px;top:0;bottom:0;width:2px;background:linear-gradient(#ff477f,transparent)}
+.event{position:relative;padding-left:48px;margin:28px 0}
+.dot{position:absolute;left:7px;top:8px;width:18px;height:18px;border-radius:50%;background:#ff477f;box-shadow:0 0 0 6px rgba(255,71,127,.12)}
+.date{color:#ff9fba;font-size:13px;font-weight:700;letter-spacing:1px}
+.event h3{margin:7px 0;font-size:20px}
+.event p{color:#d9c5ce;line-height:1.65;margin:0}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+.gallery img{width:100%;display:block;border-radius:18px;border:1px solid rgba(255,255,255,.1);cursor:pointer}
+.quote{font-family:'Playfair Display',serif;font-size:25px;line-height:1.45;text-align:center;color:#ffe6ef}
+.letter{margin-top:22px;padding:30px;border-radius:24px;background:linear-gradient(145deg,rgba(255,71,127,.16),rgba(255,255,255,.04));border:1px solid rgba(255,167,193,.18);line-height:1.9;color:#f4dfe7}
+footer{text-align:center;padding:50px 20px 70px;color:#9e8791;font-size:13px}
+.heart{display:inline-block;animation:beat 1.3s infinite}
+.birthday-countdown{margin:28px auto 0;padding:20px 16px;border-radius:22px;background:rgba(255,71,127,.08);border:1px solid rgba(255,167,193,.16)}
+.count-label{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#ffabc5;font-weight:700;margin-bottom:14px}
+.count-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.count-grid div{padding:12px 5px;border-radius:16px;background:rgba(255,255,255,.06)}
+.count-grid strong{display:block;font-family:'Playfair Display',serif;font-size:28px;color:#fff}
+.count-grid span{display:block;font-size:10px;color:#cdbbc3;text-transform:uppercase;letter-spacing:1px;margin-top:3px}
+.birthday-message{margin-top:14px;color:#f4dfe7;font-size:14px;line-height:1.5}
+.apology{margin-top:18px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.045);color:#d9c5ce;font-size:13px;line-height:1.6}
+@media(max-width:420px){.count-grid strong{font-size:23px}.count-grid{gap:5px}}
+@keyframes beat{50%{transform:scale(1.18)}}
+.fade{opacity:0;transform:translateY(20px);transition:.8s ease}
+.fade.show{opacity:1;transform:none}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:20;align-items:center;justify-content:center;padding:20px}
+.modal img{max-width:100%;max-height:90vh;border-radius:16px}
+.close{position:fixed;right:20px;top:18px;font-size:30px;color:white;cursor:pointer}
+@media(max-width:520px){.gallery{grid-template-columns:1fr}.card{padding:24px}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="glow"></div>
+  <div class="card" style="max-width:720px;position:relative">
+    <div class="kicker">A little corner of our world</div>
+    <h1>Vidhu <span class="heart">❤️</span></h1>
+    <p class="sub">For the girl who turned a simple conversation into my favourite story.</p>
+    <div class="birthday-countdown" aria-live="polite">
+      <div class="count-label">Her birthday is coming in… 🎂</div>
+      <div id="birthdayCountdown" class="count-grid">
+        <div><strong id="cdDays">--</strong><span>Days</span></div>
+        <div><strong id="cdHours">--</strong><span>Hours</span></div>
+        <div><strong id="cdMinutes">--</strong><span>Minutes</span></div>
+        <div><strong id="cdSeconds">--</strong><span>Seconds</span></div>
+      </div>
+      <div id="birthdayMessage" class="birthday-message">13 October 2026 — the day is all yours, Vidhu. ❤️</div>
+    </div>
+    <a class="btn" href="#story">Open our story ↓</a>
+  </div>
+</section>
+
+<section class="fade">
+  <div class="kicker">Our little videos 🎥</div>
+  <h2>Little moments, forever ❤️</h2>
+  <p class="sub">Kuch memories photos mein hoti hain… aur kuch ko bas play karke dobara feel kiya ja sakta hai. 🥹</p>
+  <div style="display:grid;gap:18px;margin-top:24px">
+    <div class="card"><video controls playsinline preload="metadata" style="width:100%;display:block;border-radius:16px;background:#000"><source src="videos/relationship-1.mp4" type="video/mp4"></video><p style="text-align:center;color:#d9c5ce;margin:10px 4px 2px">Our little moment ❤️</p></div>
+    <div class="card"><video controls playsinline preload="metadata" style="width:100%;display:block;border-radius:16px;background:#000"><source src="videos/relationship-2.mp4" type="video/mp4"></video><p style="text-align:center;color:#d9c5ce;margin:10px 4px 2px">Another memory with you 🥹</p></div>
+    <div class="card"><video controls playsinline preload="metadata" style="width:100%;display:block;border-radius:16px;background:#000"><source src="videos/relationship-3.mp4" type="video/mp4"></video><p style="text-align:center;color:#d9c5ce;margin:10px 4px 2px">Just us ❤️</p></div>
+  </div>
+</section>
+
+<section id="story" class="fade">
+  <div class="kicker">Where it began</div>
+  <h2>It started with a “Hello”…</h2>
+  <div class="card">
+    <p class="sub">Hamari first meeting ek shaadi mein hui thi. Phir 28 September 2025 ko ek simple sa “Hello” hua… aur dheere-dheere woh normal si chat meri favourite conversation ban gayi. 🥹❤️</p>
+    <p class="quote">“Pehli chat simple thi… par insaan special tha.”</p>
+  </div>
+</section>
+
+<section class="fade">
+  <div class="kicker">Our little timeline</div>
+  <h2>From “Hello” to “Us”</h2>
+  <div class="timeline">
+    <div class="event"><span class="dot"></span><div class="date">28 SEPTEMBER 2025</div><h3>That first chat 💬</h3><p>“Hello” se shuru hui woh conversation… jisme thodi masti, thodi teasing aur bahut saari yaadein chhupi hain.</p></div>
+    <div class="event"><span class="dot"></span><div class="date">22 OCTOBER 2025</div><h3>The day we became “us” ❤️</h3><p>Hamari relationship ki starting. Aur ab 22 October ko ek saal — 1 year of us. 🫶</p></div>
+    <div class="event"><span class="dot"></span><div class="date">EVER SINCE</div><h3>Our random little moments</h3><p>Late-night talks, “baby”, “pagli”, hasi-mazaak, chhoti nok-jhok… wahi sab jo hamari story ko hamari story banata hai.</p></div>
+  </div>
+</section>
+
+<section class="fade">
+  <div class="kicker">From our chats</div>
+  <h2>Little pieces of us 💬</h2>
+  <p class="sub">In screenshots mein sirf messages nahi hain — hamari beginning ke chhote-chhote moments hain.</p>
+  <div class="gallery">
+    <img src="images/chat-1.png" alt="Our first chat screenshot">
+    <img src="images/chat-2.png" alt="Our chat screenshot">
+    <img src="images/chat-3.png" alt="Our chat screenshot">
+    <img src="images/chat-4.png" alt="Our chat screenshot">
+    <img src="images/chat-5.png" alt="Our chat screenshot">
+    <img src="images/chat-6.png" alt="Our chat screenshot">
+    <img src="images/chat-7.png" alt="Our chat screenshot">
+    <img src="images/chat-8.png" alt="Our chat screenshot">
+    <img src="images/chat-9.png" alt="Our chat screenshot">
+    <img src="images/chat-10.png" alt="Our chat screenshot">
+  </div>
+</section>
+
+<section class="fade">
+  <div class="kicker">13 October 🎂</div>
+  <h2>Today is about you.</h2>
+  <div class="card">
+    <p class="quote">“Happy Birthday, Vidhu ❤️”</p>
+    <p class="sub">Tumhari smile, tumhari pagal si baatein, tumhara “baby” kehna… sab kuch mere liye special hai. Aaj ka din bas tumhara hai. ✨</p>
+    <div class="apology">Ye maine first time try kiya hai… isliye agar website mein koi chhoti-moti galti ho, toh please mujhe maaf kar dena. 🥹❤️ Maine bas apni taraf se tumhare liye kuch alag karne ki koshish ki hai.</div>
+  </div>
+</section>
+
+<section class="fade">
+  <div class="kicker">22 October ❤️</div>
+  <h2>One year of us</h2>
+  <div class="card" style="text-align:center">
+    <div id="counter" style="font-size:28px;font-weight:700;color:#ffabc5">Loading our time…</div>
+    <p class="sub">Aur honestly, mujhe sirf ek year nahi chahiye. Mujhe aur bahut saari dates, memories aur “hum” chahiye. 🫶</p>
+  </div>
+</section>
+
+<section class="fade">
+  <div class="kicker">For my Vidhu</div>
+  <h2>Ek baat dil se…</h2>
+  <div class="letter">
+    Vidhu,<br><br>
+    Pata nahi hamari story ka sabse beautiful part kya hai — woh shaadi wali first meeting, woh pehla “Hello”, ya phir woh saari random conversations jo baad mein memories ban gayi. ❤️<br><br>
+    Tum meri life ka woh part ban gayi ho jiske bina normal days bhi thode incomplete lagte hain. Tumhari masti, tumhari cute si pagalpan wali baatein, aur tumhara mere saath rehna… main in sabko bahut value karta hoon.<br><br>
+    Aaj tumhara birthday hai, aur meri wish simple hai: tum hamesha khush raho, smile karti raho, aur hamari story mein aise hi naye chapters add hote rahein.<br><br>
+    <b>Happy Birthday, meri Vidhu. ❤️</b><br>
+    <span style="color:#ffabc5">— Tumhara baby 🫶</span>
+  </div>
+</section>
+
+<section class="fade">
+  <div class="card" style="text-align:center">
+    <div class="kicker">One last thing</div>
+    <h2>Stay with me? 🥹</h2>
+    <p class="sub">Because this little website is only the beginning. The best memories are still waiting to happen.</p>
+    <div style="font-size:40px;margin-top:15px">❤️</div>
+  </div>
+</section>
+
+<footer>
+  Made with too much love for Vidhu ❤️<br>
+  28.09.2025 → ∞
+</footer>
+
+<div class="modal" id="modal"><span class="close" onclick="closeImg()">×</span><img id="modalImg"></div>
+<script>
+const anniversary = new Date("2025-10-22T00:00:00");
+const birthday = new Date("2026-10-13T00:00:00");
+function update(){
+  const now=new Date();
+  let diff=Math.max(0,birthday-now);
+  const days=Math.floor(diff/86400000), hrs=Math.floor(diff%86400000/3600000), mins=Math.floor(diff%3600000/60000), secs=Math.floor(diff%60000/1000);
+  document.getElementById("cdDays").textContent=days;
+  document.getElementById("cdHours").textContent=String(hrs).padStart(2,'0');
+  document.getElementById("cdMinutes").textContent=String(mins).padStart(2,'0');
+  document.getElementById("cdSeconds").textContent=String(secs).padStart(2,'0');
+  if(now >= birthday){
+    document.querySelector('.count-label').textContent='Happy Birthday, Vidhu! 🎂❤️';
+    document.getElementById('birthdayMessage').textContent='Aaj ka din tumhara hai — smile karna compulsory hai. 🥹❤️';
+  }
+  const adiff=Math.max(0,now-anniversary);
+  const adays=Math.floor(adiff/86400000), ahrs=Math.floor(adiff%86400000/3600000), amins=Math.floor(adiff%3600000/60000), asecs=Math.floor(adiff%60000/1000);
+  document.getElementById("counter").textContent=`${adays} days • ${ahrs} hrs • ${amins} min • ${asecs} sec`;
+}
+setInterval(update,1000); update();
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.12});
+document.querySelectorAll(".fade").forEach(x=>obs.observe(x));
+document.querySelectorAll(".gallery img").forEach(img=>img.onclick=()=>{document.getElementById("modalImg").src=img.src;document.getElementById("modal").style.display="flex"});
+function closeImg(){document.getElementById("modal").style.display="none"}
+</script>
+</body>
+</html>
